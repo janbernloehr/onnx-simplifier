@@ -76,4 +76,6 @@ if (ONNXSIM_PYTHON)
   if(NOT "${PY_EXT_SUFFIX}" STREQUAL "")
     set_target_properties(onnxsim_cpp2py_export PROPERTIES SUFFIX ${PY_EXT_SUFFIX})
   endif()
+  set_target_properties(onnxsim_cpp2py_export
+                        PROPERTIES LINK_FLAGS "-Wl,--exclude-libs,ALL")
 endif()
